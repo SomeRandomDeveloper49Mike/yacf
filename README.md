@@ -41,3 +41,4 @@ config = Yacf("config.yacf")
 config.props # Properties of file. (*name, *start, etc.) {"name": name, "value": value}
 config.final # Properties. {"name": name, "value": value}
 ```
+### Warning! Not yalf support yet.
