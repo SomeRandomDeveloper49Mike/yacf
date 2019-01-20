@@ -19,3 +19,13 @@ entry: %index.html
 *end
 
 ```
+
+## yalf-compress and yalf-decompress
+
+These py scripts are made to compress (.yaclf) and decompress (.yalf) Yet Another Library Files.
+
+### Usage:
+
+`python yalf-compress.py <lib filename>` creates <lib filename>.yaclf file.
+  
+`python yalf-decompress.py <compressed lib filename>` creates <compressed lib filename>.yalf file.
