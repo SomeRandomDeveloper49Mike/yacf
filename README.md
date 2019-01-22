@@ -17,6 +17,7 @@ entry: index.html
 
 ## yalf-compress and yalf-decompress
 
+##### not implemented yet, in yacf you can use only "lib" property. ("clib" is for adding compressed lib)
 These py scripts are made to compress (.yaclf) and decompress (.yalf) Yet Another Library Files.
 
 #### Usage:
