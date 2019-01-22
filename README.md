@@ -1,3 +1,5 @@
+## old repsirory. go to yacf-master
+
 # yacf
 Yet Another Config File.
 
