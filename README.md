@@ -1,23 +1,18 @@
 # yacf
 Yet Another Config File.
 
-simple config file, that looks like this:
+example of simple config file, that looks like this:
 
 ```
-! Comment.
-
-*name: http-server-config ! Name of file.
-*version: 1.0 ! Version of file.
-*info: ? ! Info is ? (No info.)
-*addcompressedlib: %config-http.yaclf ! Adding compressed library to config file. (% means filename)
-*addlib: %config-math.yalf ! Adding library to config file.
-
-*start ! Config goes below *start
+*name: sample-file
+*version: 1.0.4
+*info %info.txt
+*lib: http-server-info.yalf
+*start: ?
 host: 5000
-port: 90
-entry: %index.html
-*end
-
+port: 80
+entry: index.html
+*end: ?
 ```
 
 ## yalf-compress and yalf-decompress
@@ -34,11 +29,31 @@ These py scripts are made to compress (.yaclf) and decompress (.yalf) Yet Anothe
 You can insert this into python code.
 
 ```python
-from YACF import Yacf
+from yacf import Yacf, Property
 
-config = Yacf("config.yacf")
+Yacf.compile("filename.yacf")
 
-config.props # Properties of file. (*name, *start, etc.) {"name": name, "value": value}
-config.final # Properties. {"name": name, "value": value}
+Yacf.config   # Property(name, value)
+Yacf.props    # Property(name, value) (witch start with *)
+
 ```
-### Warning! Not yalf support yet.
+# YALF
+
+yalf or Yet Another Library File, is used to make sure that all properties are correct for some usage. (TODO: rewrite this line)
+
+for example, if you did not import lib into file, you could not add properties witch aren't specified in lib file.
+
+syntax of yalf is prettty simple, because it uses python code to generate main lib.
+```
+name: sample-lib
+version: 1.0.6
+start: ?
+```
+```python
+
+AddProperty("name") # Add property (in yacf start from *)
+AddConfiguration("name") # Adding configuration to yacf file.
+
+Debug("Hello, world!") # alternative tp print. (actually print.)
+```
+this is in one file (test.yalf)
